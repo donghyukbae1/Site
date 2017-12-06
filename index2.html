@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="main2.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>World Wide Travel Agency</title>
+  </head>
+  <body>
+    <header class="container">
+            <div class="row">
+                <h1 class="col-sm-7">World Wide Travel Agency</h1>
+                <nav class="col-sm-5 text-right">
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="index2.html">Destinations</a></p>
+                    <p><a href="index3.html">Travel Tips</a></p>
+                    <p><a href="index4.html">Trip Ideas</a></p>
+                    <p><a href="index5.html">About</a></p>
+                </nav>
+            </div>
+    </header>
+    
+    <input id="input" class="controls" type="text" placeholder="Search a destination or attraction">
+    <div id="World_map"></div>
+    <script>
+      function autocomplete(){
+        var map = new google.maps.Map(document.getElementById('World_map'), {
+          center: {lat: 34.052234, lng: -118.243685},
+          zoom: 8,
+          mapTypeId: 'terrain'
+        });
+        var input = document.getElementById('input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+        var markers = [];
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+          if (places.length == 0) {
+            return;
+          }
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              animation: google.maps.Animation.BOUNCE,
+              position: place.geometry.location,
+              draggable: true
+            }));
+            if (place.geometry.viewport) {
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTrlR2h-0Wc_R_RJES4smJmCbWks-u0nc&language=en&libraries=places&callback=autocomplete"async defer></script>
+    
+    <footer class="container">
+            <div class="row">
+            <nav class="col-sm-8 text-left">
+                <p>&copy; 2017 World Wide Travel Agency</p>
+                <p>Terms of use</p>
+                <p>Privacy</p>
+            </nav>
+            <nav class="col-sm-4 text-right">
+                <p>More Services</p>
+                <p>Contact</p>
+            </nav>
+            </div>
+    </footer>
+  </body>
+</html>
