@@ -1,0 +1,81 @@
+header{
+    padding: 20px;
+}
+
+header .row{
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    font-size: 50px;
+    color: DarkBlue;
+}
+
+header nav{
+    display: flex;
+    font-size: 16px;
+}
+
+header p{
+    margin: 1px;
+}
+
+header a:link, a:visited{
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #98bf21;
+    width: 120px;
+    padding: 4px;
+    text-align: center;
+    text-decoration: none;
+}
+
+header a:hover, a:active{
+    background-color:#7A991A;
+}
+
+.head2{
+    text-align: center;
+    font-size: 36px;
+}
+
+.description{
+    text-align: center;
+    border: 2px solid black;
+    margin: 40px;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.image{
+    margin: auto;
+    display: block;
+    width: 550px;
+    height: 500px;
+}
+
+#link{
+    color: black;
+    
+}
+
+footer{
+    font-size: 16px;
+    margin: 50px;
+}
+
+footer .col-sm-8{
+    display: flex;
+    color: gray;
+}
+
+footer .col-sm-4{
+    display: flex;
+    color: gray;
+}
+
+footer p{
+    margin: 20px;
+}
