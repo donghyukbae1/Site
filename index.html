@@ -1,15 +1,80 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Google Books API</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>World Wide Travel Agency</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Book Finder</h1>
-        <input id="search" placeholder="Title or Author">
-        <button id="button" type="button">Submit</button>
-        <div id="result"></div>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/script.js"></script>
+        <header class="container">
+            <div class="row">
+                <h1 class="col-sm-7">World Wide Travel Agency</h1>
+                <nav class="col-sm-5 text-right">
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="index2.html">Destinations</a></p>
+                    <p><a href="index3.html">Travel Tips</a></p>
+                    <p><a href="index4.html">Trip Ideas</a></p>
+                    <p><a href="index5.html">About</a></p>
+                </nav>
+            </div>
+        </header>
+        
+        <section class="jumbotron">
+            <div class="container">
+                <div class="row text-center">
+                    <h2>Welcome our World Wide Travel Agency</h2>
+                    <h3>Select the best places to travel</h3>
+                    <a class="btn btn-primary" href="index2.html" role="button">Search</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="container">
+            <div class="row">
+                <figure class="col-sm-6">
+                    <p>San Francisco</p>
+                    <img src="https://static1.squarespace.com/static/547f29bfe4b0dc192ed7bdac/54aeb15ce4b018c14f34c7cb/54aeb160e4b018c14f34c7ed/1420734817363/san-franc.jpg?format=2500w"/>
+                </figure>
+                <figure class="col-sm-6">
+                    <p>Kyoto</p>
+                    <img src="http://static5.businessinsider.com/image/5818c9bbdd08956c5a8b47b1/19-photos-that-show-why-kyoto-and-tokyo-were-voted-the-best-cities-in-the-world.jpg"/>
+                </figure>
+            </div>
+            <div class="row">
+                <figure class="col-sm-6">
+                    <p>Shanghai</p>
+                    <img src="https://www.omm.com/~/media/images/site/locations/shanghai_780x520.ashx"/>
+                </figure>
+                <figure class="col-sm-6">
+                    <p>Paris</p>
+                    <img src="https://gapyear.s3.amazonaws.com/images/made/images/advertiser_files/AdobeStock_59254074_582_389.jpeg"/>
+                </figure>
+            </div>
+            <div class="row">
+                <figure class="col-sm-6">
+                    <p>Sydney</p>
+                    <img src="http://travel.home.sndimg.com/content/dam/images/travel/fullset/2013/12/04/7f/sydney-opera-house-2.rend.hgtvcom.1280.720.suffix/1491592110293.jpeg"/>
+                </figure>
+                <figure class="col-sm-6">
+                    <p>Rio de Janeiro</p>
+                    <img src="https://www.simplepastimes.com/prod_images_blowup/C-102846.jpg"/>
+                </figure>
+            </div>
+        </section>
+        
+        <footer class="container">
+            <div class="row">
+            <nav class="col-sm-8 text-left">
+                <p>&copy; 2017 World Wide Travel Agency</p>
+                <p>Terms of use</p>
+                <p>Privacy</p>
+            </nav>
+            <nav class="col-sm-4 text-right">
+                <p>More Services</p>
+                <p>Contact</p>
+            </nav>
+            </div>
+        </footer>
     </body>
 </html>
